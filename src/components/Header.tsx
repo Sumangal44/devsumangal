@@ -56,8 +56,8 @@ const Header: React.FC = () => {
               Contact
             </a>
           </nav>
-          <ModeToggle />
-          <Sheet>
+          <ModeToggle/>    
+                <Sheet>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
