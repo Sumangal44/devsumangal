@@ -1,11 +1,77 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard";
+import Buttoncard from "@/components/Button";
+import { Description } from "@radix-ui/react-dialog";
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description:
+      "A fully-featured online store with cart and checkout functionality",
+      image: 'https://cdn.pixabay.com/photo/2017/10/10/07/48/hills-2836301_960_720.jpg',
+      link: "/projects/e-commerce"
+  },
+  {
+    title: "Task Management App",
+    description:
+      "A collaborative tool for teams to organize and track projects",
+      image:'https://cdn.pixabay.com/photo/2024/12/11/23/40/ostrich-9261549_640.jpg',
+      link: "/projects/task-management"
+  },
+  {
+    title: "Weather Forecast Dashboard",
+    description: "Real-time weather data visualization with 7-day forecasts",
+    image: 'https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg',
+    link: "/projects/weather-dashboard"
+  },
+  {
+    title: "ai resume bulider",
+    description: "AI Resume Builder",
+    image: 'https://cdn.pixabay.com/photo/2024/05/26/15/27/anime-8788959_960_720.jpg',
+    link: "/projects/airesume"
+  }
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="DevPortfolio - Home">
+  <div class="container px-4 md:px-6">
+    <section class="flex flex-col gap-4 py-8 md:py-12 lg:py-16">
+      <div class="flex flex-col gap-2 max-w-[980px]">
+        <h1
+          class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl"
+        >
+          Welcome to My Portfolio
+        </h1>
+        <p class="text-xl text-muted-foreground">
+          I build amazing web experiences
+        </p>
+        <p class="max-w-[700px] text-base sm:text-lg text-muted-foreground">
+          I'm a passionate developer creating responsive and user-friendly web
+          applications that solve real-world problems.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 mt-2">
+       <Buttoncard tag="View Projects" link="/projects" vari="" />
+        <Buttoncard tag="Contact Me" link="/contact" vari="outline"/>
+      </div>
+    </section>
+
+    <section class="py-8 md:py-12 lg:py-16">
+      <h2 class="text-2xl font-bold tracking-tight mb-8 md:text-3xl">
+        Featured Projects
+      </h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          projects.map((project) => (
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              link={project.link}
+            />
+          ))
+        }
+      </div>
+    </section>
+  </div>
 </Layout>

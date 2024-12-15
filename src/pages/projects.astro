@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard';
+
+const projects = [
+  {
+    title: 'Project 1',
+    description: 'A brief description of Project 1',
+    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
+    link: '/projects/project1',
+  },
+  {
+    title: 'Project 2',
+    description: 'A brief description of Project 2',
+    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
+    link: '/projects/project2',
+  },
+  {
+    title: 'Project 3',
+    description: 'A brief description of Project 3',
+    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
+    link: '/projects/project3',
+  },
+  {
+    title: 'Project 4',
+    description: 'A brief description of Project 4',
+    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
+    link: '/projects/project4',
+  },
+  {
+    title: 'Project 5',
+    description: 'A brief description of Project 5',
+    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
+    link: '/projects/project5',
+  },
+  {
+    title: 'Project 6',
+    description: 'A brief description of Project 6',
+    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
+    link: '/projects/project6',
+  },
+];
+---
+
+<Layout title="DevPortfolio - Projects">
+  <section class="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+    <div class="flex max-w-[980px] flex-col items-start gap-2">
+      <h1 class="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+        My Projects
+      </h1>
+      <p class="max-w-[700px] text-lg text-muted-foreground">
+        Here's a collection of my recent work. Each project showcases different skills and technologies.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-8">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => (
+        <ProjectCard 
+          title={project.title}
+          description={project.description}
+          image={project.image}
+          link={project.link}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>
+

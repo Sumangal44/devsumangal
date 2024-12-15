@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Buttoncard from '@/components/Button';
+---
+
+<Layout title="DevPortfolio - About">
+  <section class="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+    <div class="flex max-w-[980px] flex-col items-start gap-2">
+      <h1 class="text-3xl font-extrabold leading-tight tracking-tighter sm:text-4xl md:text-5xl">
+        About Me
+      </h1>
+      <p class="max-w-[700px] text-base sm:text-lg text-muted-foreground">
+        I'm a passionate web developer with experience in modern web technologies. 
+        I love creating responsive and user-friendly web applications that solve real-world problems.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-8">
+    <div class="grid gap-8 md:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-bold mb-4">My Skills</h2>
+        <ul class="list-disc list-inside space-y-2 text-muted-foreground">
+          <li>HTML, CSS,JavaScript ,TypeScript, Python </li>
+          <li>shadcn/ui ,Tailwind CSS,</li>          
+          <li>React and Next.js</li>
+          <li>Node.js and Express</li>
+          <li>MongoDB and SQL databases</li>
+          <li>Responsive design and Tailwind CSS</li>
+          <li>Git, GitHub, and GitLab</li>
+          <li>Testing with Jest and Cypress</li>
+          <li>Deployment with Vercel</li>
+          <li>Open Source contributions</li>
+          
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold mb-4">My Journey</h2>
+        <p class="mb-4 text-muted-foreground">
+          I started my journey as a web developer 1.5 years ago, and since then, I've been constantly learning and improving my skills. 
+          I've worked on various projects, from small business websites to large-scale web applications.
+        </p>
+        <p class="mb-4 text-muted-foreground">
+          When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
+          or enjoying a good book on software development.
+        </p>
+      </div>
+    </div>
+    <div class="mt-8">
+      <Buttoncard tag="Get in Touch" link="/contact" vari="" />
+    </div>
+  </section>
+</Layout>
+
