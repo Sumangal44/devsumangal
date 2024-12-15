@@ -1,76 +1,72 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ProjectCard from "../components/ProjectCard";
-import Buttoncard from "@/components/Button";
+import Layout from '@/layouts/Layout.astro';
+import Buttoncard from '@/components/Button';
+import ProjectCard from '@/components/ProjectCard';
+
 const projects = [
   {
-    title: "E-commerce Platform",
-    description:
-      "A fully-featured online store with cart and checkout functionality",
-      image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
-      link: "/projects/e-commerce"
+    title: 'E-commerce Platform',
+    description: 'A fully-featured online store with cart and checkout functionality',
+    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
+    link: '/projects/e-commerce',
   },
   {
-    title: "Task Management App",
-    description:
-      "A collaborative tool for teams to organize and track projects",
-      image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
-      link: "/projects/task-management"
-  },
-  {
-    title: "Weather Forecast Dashboard",
-    description: "Real-time weather data visualization with 7-day forecasts",
+    title: 'Task Management App',
+    description: 'A collaborative tool for teams to organize and track projects',
     image: 'https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg',
-    link: "/projects/weather-dashboard"
+    link: '/projects/task-management',
   },
   {
-    title: "ai resume bulider",
-    description: "AI Resume Builder",
+    title: 'Weather Forecast Dashboard',
+    description: 'Real-time weather data visualization with 7-day forecasts',
     image: 'https://cdn.pixabay.com/photo/2024/05/26/15/27/anime-8788959_960_720.jpg',
-    link: "/projects/airesume"
-  }
+    link: '/projects/weather-dashboard',
+  },
 ];
+const img = 'https://avatars.githubusercontent.com/u/123644743?s=400&u=d7278ff6097cba505b773db6a45f000faacba879&v=4';
 ---
 
 <Layout title="DevSumangal - Home">
   <div class="container px-4 md:px-6">
-    <section class="flex flex-col gap-4 py-8 md:py-12 lg:py-16">
-      <div class="flex flex-col gap-2 max-w-[980px]">
-        <h1
-          class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl"
-        >
+    <section class="flex flex-col md:flex-row gap-8 py-8 md:py-12 lg:py-16 items-center">
+      <div class="flex flex-col gap-4 max-w-[600px]">
+        <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl">
           Welcome to My Portfolio
         </h1>
         <p class="text-xl text-muted-foreground">
           I build amazing web experiences
         </p>
-        <p class="max-w-[700px] text-base sm:text-lg text-muted-foreground">
-          I'm a passionate developer creating responsive and user-friendly web
-          applications that solve real-world problems.
+        <p class="max-w-[600px] text-base sm:text-lg text-muted-foreground">
+          I'm a passionate developer creating responsive and user-friendly web applications that solve real-world problems.
         </p>
+        <div class="flex flex-col sm:flex-row gap-4 mt-2">
+          <Buttoncard tag="View Projects" link="/projects" vari="default" />
+          <Buttoncard tag="Contact Me" link="/contact" vari="outline"/>        </div>
       </div>
-      <div class="flex flex-col sm:flex-row gap-4 mt-2">
-       <Buttoncard tag="View Projects" link="/projects" vari="default" />
-        <Buttoncard tag="Contact Me" link="/contact" vari="outline"/>
+      <div class="w-full max-w-[300px] md:max-w-[400px] aspect-square rounded-full overflow-hidden">
+        <img 
+          src={img} 
+          alt="Developer portrait" 
+          class="w-full h-full object-cover"
+          width="400"
+          height="400"
+        />
       </div>
     </section>
 
     <section class="py-8 md:py-12 lg:py-16">
-      <h2 class="text-2xl font-bold tracking-tight mb-8 md:text-3xl">
-        Featured Projects
-      </h2>
+      <h2 class="text-2xl font-bold tracking-tight mb-8 md:text-3xl">Featured Projects</h2>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {
-          projects.map((project) => (
-            <ProjectCard
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              link={project.link}
-            />
-          ))
-        }
+        {projects.map((project) => (
+          <ProjectCard 
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            link={project.link}
+          />
+        ))}
       </div>
     </section>
   </div>
 </Layout>
+
