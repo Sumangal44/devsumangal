@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 interface ButtonProps {
   link: string;
   tag: string;
-  vari: string; 
+  vari: "default"|"link"|"outline"| "secondary"|"ghost"|null|undefined; 
 }
 
 const Buttoncard: React.FC<ButtonProps> = ({ link,tag, vari }) => {

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
-} from './ui/sheet';
+} from '@/components/ui/sheet';
 
-import { ModeToggle } from './ModeToggle';
+import { ModeToggle } from '@/components/ModeToggle';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);

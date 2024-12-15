@@ -2,20 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard";
 import Buttoncard from "@/components/Button";
-import { Description } from "@radix-ui/react-dialog";
 const projects = [
   {
     title: "E-commerce Platform",
     description:
       "A fully-featured online store with cart and checkout functionality",
-      image:'https://cdn.pixabay.com/photo/2024/12/11/23/40/ostrich-9261549_640.jpg',
+      image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
       link: "/projects/e-commerce"
   },
   {
     title: "Task Management App",
     description:
       "A collaborative tool for teams to organize and track projects",
-      image:'https://cdn.pixabay.com/photo/2024/12/11/23/40/ostrich-9261549_640.jpg',
+      image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
       link: "/projects/task-management"
   },
   {
@@ -33,7 +32,7 @@ const projects = [
 ];
 ---
 
-<Layout title="DevPortfolio - Home">
+<Layout title="DevSumangal - Home">
   <div class="container px-4 md:px-6">
     <section class="flex flex-col gap-4 py-8 md:py-12 lg:py-16">
       <div class="flex flex-col gap-2 max-w-[980px]">
@@ -51,7 +50,7 @@ const projects = [
         </p>
       </div>
       <div class="flex flex-col sm:flex-row gap-4 mt-2">
-       <Buttoncard tag="View Projects" link="/projects" vari="" />
+       <Buttoncard tag="View Projects" link="/projects" vari="default" />
         <Buttoncard tag="Contact Me" link="/contact" vari="outline"/>
       </div>
     </section>
