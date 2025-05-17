@@ -21,43 +21,38 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = ['Home', 'Projects', 'About', 'Contact'];
+
   return (
-    <header className={`sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-sm transition-all ${isScrolled ? 'shadow-md' : ''}`}>
-      <div className="container flex h-16 items-center justify-between">
-        <div>
-          <a href="/" className="flex items-center space-x-2">
-            <span className="inline-block text-lg font-bold sm:text-xl">Devsumangal</span>
-          </a>
-        </div>
-        <div className="flex items-center space-x-4">
-          <nav className="hidden md:flex space-x-4 lg:space-x-6">
-            <a
-              href="/"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Home
-            </a>
-            <a
-              href="/projects"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Projects
-            </a>
-            <a
-              href="/about"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="/contact"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Contact
-            </a>
-          </nav>
-          <ModeToggle/>    
-                <Sheet>
+    <header className={`sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-md transition-shadow ${isScrolled ? 'shadow-sm' : ''}`}>
+      <div className="container mx-auto px-4 flex h-16 items-center justify-between">
+        {/* Logo */}
+        <a href="/" className="flex items-center space-x-2">
+          <span className="inline-block text-lg font-bold sm:text-xl">Devsumangal</span>
+        </a>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
+          {navLinks.map((label) => {
+            const href = label === 'Home' ? '/' : `/${label.toLowerCase()}`;
+            return (
+              <a
+                key={label}
+                href={href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {label}
+              </a>
+            );
+          })}
+        </nav>
+
+        {/* Right side actions */}
+        <div className="flex items-center space-x-2 md:space-x-4">
+          <ModeToggle />
+
+          {/* Mobile Menu */}
+          <Sheet>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
@@ -69,31 +64,19 @@ const Header: React.FC = () => {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[240px] sm:w-[300px]">
-              <nav className="flex flex-col gap-4 mt-4">
-                <a
-                  href="/"
-                  className="block px-2 py-1 text-lg hover:text-primary transition-colors"
-                >
-                  Home
-                </a>
-                <a
-                  href="/projects"
-                  className="block px-2 py-1 text-lg hover:text-primary transition-colors"
-                >
-                  Projects
-                </a>
-                <a
-                  href="/about"
-                  className="block px-2 py-1 text-lg hover:text-primary transition-colors"
-                >
-                  About
-                </a>
-                <a
-                  href="/contact"
-                  className="block px-2 py-1 text-lg hover:text-primary transition-colors"
-                >
-                  Contact
-                </a>
+              <nav className="flex flex-col gap-3 mt-6">
+                {navLinks.map((label) => {
+                  const href = label === 'Home' ? '/' : `/${label.toLowerCase()}`;
+                  return (
+                    <a
+                      key={label}
+                      href={href}
+                      className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-1"
+                    >
+                      {label}
+                    </a>
+                  );
+                })}
               </nav>
             </SheetContent>
           </Sheet>
@@ -104,4 +87,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-

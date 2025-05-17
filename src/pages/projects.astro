@@ -43,28 +43,28 @@ const projects = [
 ---
 
 <Layout title="DevSumangal - Projects">
-  <section class="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-    <div class="flex max-w-[980px] flex-col items-start gap-2">
-      <h1 class="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+  <section class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl">
         My Projects
       </h1>
-      <p class="max-w-[700px] text-lg text-muted-foreground">
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
         Here's a collection of my recent work. Each project showcases different skills and technologies.
       </p>
     </div>
   </section>
 
-  <section class="container py-8">
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  <section class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
         <ProjectCard 
           title={project.title}
           description={project.description}
           image={project.image}
           link={project.link}
+          class="hover:scale-105 transition-transform duration-300 ease-in-out"
         />
       ))}
     </div>
   </section>
 </Layout>
-
