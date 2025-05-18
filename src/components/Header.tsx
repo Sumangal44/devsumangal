@@ -21,7 +21,7 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'Projects', 'About', 'Contact'];
+  const navLinks = ['Home', 'Projects', 'About', 'services','Contact'];
 
   return (
     <header className={`sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-md transition-shadow ${isScrolled ? 'shadow-sm' : ''}`}>
