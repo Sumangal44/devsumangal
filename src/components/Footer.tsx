@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
             <Twitter className="h-5 w-5" />
             <span className="sr-only">Twitter</span>
           </a>
-          <a href="https://www.linkedin.com/in/sumangal-karan-468076267/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+          <a href="https://www.linkedin.com/in/sumangal-karan" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
             <Linkedin className="h-5 w-5" />
             <span className="sr-only">LinkedIn</span>
           </a>
