@@ -3,32 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Buttoncard from "@/components/Button";
 import ProjectCard from "@/components/ProjectCard";
 import SocialIcons from "@/components/SocialIcons.tsx";
-
-const projects = [
-  {
-    title: "Charmmono-Theme",
-    description:
-      "🚀👨‍🏭❤️Charmmono-Theme is a sleek VS Code theme inspired by monospace aesthetics and Charmed Icons, offering a minimal, elegant, and highly readable coding experience with dark & light modes. 🚀",
-    image:
-      "https://images.vscodethemes.com/sumangalkaran.charmmono-theme/charmmono-theme-dark-js-preview-BIg6.svg",
-    link: "https://marketplace.visualstudio.com/items?itemName=sumangalkaran.charmmono-theme"
-  },
-  {
-    title: "skelecli.dev",
-    description:
-      "🚀❤️✅A simple CLI to generate a blueprint for a new project✅👨‍🏭🚀",
-    image:"https://res.cloudinary.com/dmeroa8nx/image/upload/v1747563040/Screenshot_2025-05-18_153617_mv5fla.png",
-    link: "https://skelecli-dev.vercel.app/"
-  },
-  {
-    title: "Weather Forecast Dashboard",
-    description: "Real-time weather data visualization with 7-day forecasts",
-    image:
-      "https://cdn.pixabay.com/photo/2024/05/26/15/27/anime-8788959_960_720.jpg",
-    link: "/projects/weather-dashboard"
-  }
-];
-
+import { projects } from "@/data/projects";
 const img =
   "https://avatars.githubusercontent.com/u/123644743?s=400&u=d7278ff6097cba505b773db6a45f000faacba879&v=4";
 ---
