@@ -1,45 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard';
-
-const projects = [
-  {
-    title: 'Project 1',
-    description: 'A brief description of Project 1',
-    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
-    link: '/projects/project1',
-  },
-  {
-    title: 'Project 2',
-    description: 'A brief description of Project 2',
-    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
-    link: '/projects/project2',
-  },
-  {
-    title: 'Project 3',
-    description: 'A brief description of Project 3',
-    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
-    link: '/projects/project3',
-  },
-  {
-    title: 'Project 4',
-    description: 'A brief description of Project 4',
-    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
-    link: '/projects/project4',
-  },
-  {
-    title: 'Project 5',
-    description: 'A brief description of Project 5',
-    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
-    link: '/projects/project5',
-  },
-  {
-    title: 'Project 6',
-    description: 'A brief description of Project 6',
-    image: 'https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_1280.jpg',
-    link: '/projects/project6',
-  },
-];
+import { projects } from "@/data/projects"; 
 ---
 
 <Layout title="DevSumangal - Projects">
@@ -62,7 +24,6 @@ const projects = [
           description={project.description}
           image={project.image}
           link={project.link}
-          class="hover:scale-105 transition-transform duration-300 ease-in-out"
         />
       ))}
     </div>

@@ -16,7 +16,7 @@ interface ProjectCardProps {
   link: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, link }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, link,}) => {
   return (
     <Card className="flex flex-col overflow-hidden">
       <CardHeader className="p-0">

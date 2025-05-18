@@ -20,23 +20,24 @@ import { Textarea } from '@/components/ui/textarea';
 
   <!-- Contact Form Section -->
   <section class="container px-4 py-8">
-    <form class="space-y-6 max-w-xl w-full mx-auto">
+    <form class="space-y-6 max-w-xl w-full mx-auto"  action="https://formspree.io/f/xldbzkve"
+  method="POST">
       <div class="space-y-2">
         <label for="name" class="block text-sm font-medium">Name</label>
-        <Input type="text" id="name" placeholder="Your Name" required class="w-full" />
+        <Input type="text" name="name" id="name" placeholder="Your Name" required className="w-full" />
       </div>
 
       <div class="space-y-2">
         <label for="email" class="block text-sm font-medium">Email</label>
-        <Input type="email" id="email" placeholder="you@example.com" required class="w-full" />
+        <Input type="email" name="email" id="email" placeholder="you@example.com" required className="w-full" />
       </div>
 
       <div class="space-y-2">
         <label for="message" class="block text-sm font-medium">Message</label>
-        <Textarea id="message" placeholder="Your message here..." required class="w-full" />
+        <Textarea id="message" name="message" placeholder="Your message here..." required className="w-full" />
       </div>
 
-      <Button type="submit" size="lg" class="w-full">Send Message</Button>
+      <Button type="submit" size="lg" className="w-full">Send Message</Button>
     </form>
   </section>
 </Layout>
