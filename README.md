@@ -1,7 +1,3 @@
-Certainly! Based on the information available from the [devsumangal repository](https://github.com/Sumangal44/devsumangal), here's a structured and professional `README.md` file you can use or adapt:
-
----
-
 # 💫 DevSumangal – Personal Portfolio Website
 
 Welcome to **DevSumangal**, a beautifully crafted personal portfolio website built to showcase the projects, skills, and achievements of [Sumangal Karan](https://github.com/Sumangal44).([GitHub][1])
@@ -45,7 +41,7 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:3000` in your browser to view the site.
+Visit `http://localhost:4321` in your browser to view the site.
 
 ---
 
@@ -71,19 +67,23 @@ devsumangal/
 This project is licensed under the [MIT License](./LICENSE).
 
 ---
+## 👥 Contributors
+Thanks to these amazing people for improving **devsumangal**! 🚀
+
+<a href="https://github.com/sumangal44/skelecli/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sumangal44/devsumangal" />
+</a>
+---
 
 ## 📬 Contact
 
 * **GitHub**: [@Sumangal44](https://github.com/Sumangal44)
 * **Portfolio**: [devsumangal.netlify.app](https://devsumangal.netlify.app/)
-* **LinkedIn**: [Sumangal Karan](https://www.linkedin.com/in/sumangal-karan-468076267)
-* **Twitter**: [@SumangalKaran](https://twitter.com/SumangalKaran)([GitHub][1])
+* **LinkedIn**: [Sumangal Karan](https://www.linkedin.com/in/sumangal-karan)
+* **Twitter**: [@SumangalKaran](https://twitter.com/SumangalKaran)
 
 ---
 
-Feel free to fork this repository and customize it to create your own personal portfolio website!
-
----
 
 [1]: https://github.com/sumangal44?utm_source=chatgpt.com "Sumangal Karan Sumangal44 - GitHub"
 
