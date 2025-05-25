@@ -6,38 +6,81 @@ import { Textarea } from '@/components/ui/textarea';
 ---
 
 <Layout title="DevSumangal - Contact">
-  <!-- Intro Section -->
-  <section class="container px-4 grid items-center gap-6 pb-8 pt-6 md:py-10">
-    <div class="flex flex-col items-start gap-2 max-w-2xl mx-auto text-center md:text-left">
-      <h1 class="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl">
-        Contact Me
-      </h1>
-      <p class="text-base sm:text-lg text-muted-foreground">
-        Have a question or want to work together? Feel free to reach out!
-      </p>
-    </div>
-  </section>
-
-  <!-- Contact Form Section -->
-  <section class="container px-4 py-8">
-    <form class="space-y-6 max-w-xl w-full mx-auto"  action="https://formspree.io/f/xldbzkve"
-  method="POST">
-      <div class="space-y-2">
-        <label for="name" class="block text-sm font-medium">Name</label>
-        <Input type="text" name="name" id="name" placeholder="Your Name" required className="w-full" />
+  <!-- Contact Section -->
+  <main class="container px-4 py-12">
+    <section
+      aria-labelledby="contact-heading"
+      class="grid items-center gap-10 text-center md:text-left"
+    >
+      <div class="max-w-2xl mx-auto">
+        <h1
+          id="contact-heading"
+          class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight"
+        >
+          Contact Me
+        </h1>
+        <p class="mt-2 text-muted-foreground text-base sm:text-lg">
+          Have a question or want to work together? Feel free to reach out!
+        </p>
       </div>
+    </section>
 
-      <div class="space-y-2">
-        <label for="email" class="block text-sm font-medium">Email</label>
-        <Input type="email" name="email" id="email" placeholder="you@example.com" required className="w-full" />
-      </div>
+    <!-- Contact Form -->
+    <section class="mt-10 max-w-xl mx-auto w-full">
+      <form
+        action="https://formspree.io/f/xldbzkve"
+        method="POST"
+        aria-label="Contact Form"
+        class="space-y-6"
+      >
+        <div class="space-y-2">
+          <label for="name" class="block text-sm font-medium">
+            Name
+          </label>
+          <Input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+            aria-required="true"
+            className="w-full"
+          />
+        </div>
 
-      <div class="space-y-2">
-        <label for="message" class="block text-sm font-medium">Message</label>
-        <Textarea id="message" name="message" placeholder="Your message here..." required className="w-full" />
-      </div>
+        <div class="space-y-2">
+          <label for="email" class="block text-sm font-medium">
+            Email
+          </label>
+          <Input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            aria-required="true"
+            className="w-full"
+          />
+        </div>
 
-      <Button type="submit" size="lg" className="w-full">Send Message</Button>
-    </form>
-  </section>
+        <div class="space-y-2">
+          <label for="message" class="block text-sm font-medium">
+            Message
+          </label>
+          <Textarea
+            id="message"
+            name="message"
+            placeholder="Your message here..."
+            required
+            aria-required="true"
+            className="w-full"
+          />
+        </div>
+
+        <Button type="submit" size="lg" className="w-full">
+          Send Message
+        </Button>
+      </form>
+    </section>
+  </main>
 </Layout>

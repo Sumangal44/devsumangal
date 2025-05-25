@@ -5,7 +5,6 @@ import ProjectCard from "@/components/ProjectCard";
 import SocialIcons from "@/components/SocialIcons.tsx";
 import { projects } from "@/data/projects";
 import Services from "@/components/services.astro";
-
 const img =
   "https://avatars.githubusercontent.com/u/123644743?s=400&u=d7278ff6097cba505b773db6a45f000faacba879&v=4";
 ---
@@ -13,31 +12,62 @@ const img =
 <Layout title="DevSumangal - Home">
   <div class="container px-4 md:px-6">
     <!-- Hero Section -->
-    <section class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 py-10 md:py-16 ">
+    <section
+      class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 py-10 md:py-16"
+    >
       <!-- Left content -->
       <div class="flex flex-col gap-4 max-w-xl text-center md:text-left">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight"
+        >
           Welcome to My Portfolio
         </h1>
         <p class="text-lg md:text-xl text-muted-foreground">
           I build amazing web experiences
         </p>
         <p class="text-base sm:text-lg text-muted-foreground">
-          I'm a passionate developer creating responsive and user-friendly web applications that solve real-world problems.
+          I'm a passionate developer creating responsive and user-friendly web
+          applications that solve real-world problems.
         </p>
 
         <!-- Buttons -->
-        <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-4 flex-wrap">
+        <div
+          class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-4 flex-wrap"
+        >
           <Buttoncard tag="View Projects" link="/projects" vari="default" />
           <Buttoncard tag="Contact Me" link="/contact" vari="outline" />
-          <a
-            href="/sumangalkaran.pdf"
-            download
-            class="inline-flex items-center justify-center rounded-md border border-input bg-primary text-primary-foreground px-6 py-2 text-sm font-medium shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          <!-- Download Button -->
+
+<button
+            id="downloadBtn"
+            onclick="downloadWithProgress()"
+            class="relative inline-flex items-center justify-center rounded-md border border-input bg-primary text-primary-foreground px-6 py-2 text-sm font-medium shadow transition-all duration-300 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            Download Resume
-          </a>
-        </div>
+            <span id="downloadText" class="flex items-center gap-2">
+              <svg
+                id="downloadIcon"
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 12v6m0 0l-3-3m3 3l3-3m0-6V4m0 0H6m6 0h6"
+                ></path>
+              </svg>
+              <span>Download Resume</span>
+            </span>
+            <!-- Progress Bar -->
+            <div
+              id="progressBar"
+              class="absolute bottom-0 left-0 h-1 bg-green-500 transition-all duration-200"
+              style="width: 0%;"
+            >
+            </div>
+          </button>         </div>
 
         <div class="hidden md:block">
           <SocialIcons />
@@ -46,7 +76,9 @@ const img =
 
       <!-- Right image -->
       <div class="flex flex-col items-center w-full max-w-[400px]">
-        <div class="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] aspect-square rounded-full overflow-hidden shadow-md">
+        <div
+          class="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] aspect-square rounded-full overflow-hidden shadow-md"
+        >
           <img
             src={img}
             alt="Developer portrait"
@@ -65,7 +97,9 @@ const img =
 
     <!-- Projects Section -->
     <section class="py-10 md:py-16">
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-8 text-center md:text-center">
+      <h2
+        class="text-2xl md:text-3xl font-bold tracking-tight mb-8 text-center md:text-center"
+      >
         Featured Projects
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -82,6 +116,85 @@ const img =
       </div>
     </section>
     <!-- 👇 New Services Section -->
-<Services />
+    <Services />
   </div>
-</Layout>
+  <script is:inline>
+    async function downloadWithProgress() {
+      const btn = document.getElementById("downloadBtn");
+      const progress = document.getElementById("progressBar");
+      const text = document.getElementById("downloadText");
+
+      btn.disabled = true;
+      btn.classList.add("opacity-70", "pointer-events-none");
+
+      const url = "/sumangalkaran.pdf";
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Download failed.");
+
+        const contentLength = response.headers.get("content-length");
+        const total = contentLength ? parseInt(contentLength, 10) : 0;
+        let loaded = 0;
+
+        const reader = response.body.getReader();
+        const chunks = [];
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          chunks.push(value);
+          loaded += value.length;
+
+          if (total) {
+            const percent = ((loaded / total) * 100).toFixed(2);
+            progress.style.width = `${percent}%`;
+          } else {
+            // If content-length unknown, animate an indeterminate style
+            progress.style.width = `100%`;
+            progress.classList.add("animate-pulse");
+          }
+        }
+
+        const blob = new Blob(chunks);
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "sumangalkaran.pdf";
+        link.click();
+        URL.revokeObjectURL(link.href);
+
+        // Success state - animate icon + text change
+        text.innerHTML = `
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+        <span>Downloaded ✅</span>
+      `;
+        progress.style.width = "100%";
+        progress.style.backgroundColor = "#22c55e";
+
+        // Reset after 5 seconds
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.classList.remove("opacity-70", "pointer-events-none");
+          progress.style.width = "0%";
+          progress.style.backgroundColor = "#22c55e"; // Keep green or reset to default bg if needed
+          text.innerHTML = `
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 12v6m0 0l-3-3m3 3l3-3m0-6V4m0 0H6m6 0h6" />
+          </svg>
+          <span>Download Resume</span>
+        `;
+          progress.classList.remove("animate-pulse");
+        }, 5000);
+      } catch (err) {
+        alert(err.message || "Download failed.");
+        btn.disabled = false;
+        btn.classList.remove("opacity-70", "pointer-events-none");
+        progress.style.width = "0%";
+        progress.classList.remove("animate-pulse");
+      }
+    }
+  </script></Layout
+>
