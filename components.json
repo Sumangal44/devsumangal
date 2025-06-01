@@ -5,6 +5,7 @@
   "tsx": false,
   "tailwind": {
     "config": "",
+    "configComment": "The Tailwind config path is intentionally set to an empty string because the application uses default settings or external configurations.",
     "css": "src/styles/global.css",
     "baseColor": "zinc",
     "cssVariables": true,
