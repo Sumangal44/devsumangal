@@ -1,22 +1,14 @@
-import React from 'react';
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+  CardTitle
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, link,}) => {
+const ProjectCard = ({ title, description, image, link }) => {
   return (
     <Card className="flex flex-col overflow-hidden">
       <CardHeader className="p-0">
@@ -36,4 +28,3 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, li
 };
 
 export default ProjectCard;
-

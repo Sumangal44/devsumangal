@@ -1,10 +1,10 @@
-import React from 'react';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="border-t">
-<div className="container flex flex-col items-center justify-center gap-4 py-10 md:h-24 md:flex-row md:py-0">        <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+      <div className="container flex flex-col items-center justify-center gap-4 py-10 md:h-24 md:flex-row md:py-0">
+        <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             Built by{" "}
             <a
@@ -28,17 +28,32 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className="flex gap-4">
-          <a href="https://github.com/sumangal44" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+          <a
+            href="https://github.com/sumangal44"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="GitHub"
+          >
             <Github className="h-5 w-5" />
-            <span className="sr-only">GitHub</span>
           </a>
-          <a href="https://x.com/SumangalKaran" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+          <a
+            href="https://x.com/SumangalKaran"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Twitter"
+          >
             <Twitter className="h-5 w-5" />
-            <span className="sr-only">Twitter</span>
           </a>
-          <a href="https://www.linkedin.com/in/sumangal-karan" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+          <a
+            href="https://www.linkedin.com/in/sumangal-karan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="LinkedIn"
+          >
             <Linkedin className="h-5 w-5" />
-            <span className="sr-only">LinkedIn</span>
           </a>
         </div>
       </div>
@@ -47,4 +62,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-
