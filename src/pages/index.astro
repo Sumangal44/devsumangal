@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Buttoncard from "@/components/Button";
 import ProjectCard from "@/components/ProjectCard";
-import SocialIcons from "@/components/SocialIcons.tsx";
+import SocialIcons from "@/components/SocialIcons";
 import { projects } from "@/data/projects";
 import Services from "@/components/services.astro";
 const img =
@@ -38,7 +38,7 @@ const img =
           <Buttoncard tag="Contact Me" link="/contact" vari="outline" />
           <!-- Download Button -->
 
-<button
+          <button
             id="downloadBtn"
             onclick="downloadWithProgress()"
             class="relative inline-flex items-center justify-center rounded-md border border-input bg-primary text-primary-foreground px-6 py-2 text-sm font-medium shadow transition-all duration-300 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -67,7 +67,8 @@ const img =
               style="width: 0%;"
             >
             </div>
-          </button>         </div>
+          </button>
+        </div>
 
         <div class="hidden md:block">
           <SocialIcons />
@@ -118,7 +119,7 @@ const img =
     <!-- 👇 New Services Section -->
     <Services />
   </div>
-  <script is:inline>
+  <script is:inline type="text/partytown">
     async function downloadWithProgress() {
       const btn = document.getElementById("downloadBtn");
       const progress = document.getElementById("progressBar");
