@@ -20,7 +20,7 @@ Welcome to **DevSumangal**, a beautifully crafted personal portfolio website bui
 
 * **Framework**: [Astro](https://astro.build/)
 * **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-* **Languages**: TypeScript, HTML, CSS
+* **Languages**: JavaScript,TypeScript, HTML, CSS
 * **Deployment**: [Netlify](https://www.netlify.com/)
 
 ---
@@ -35,10 +35,10 @@ git clone https://github.com/Sumangal44/devsumangal.git
 cd devsumangal
 
 # Install dependencies
-npm install
+pnpm install
 
 # Start the development server
-npm run dev
+pnpm run dev
 ```
 
 Visit `http://localhost:4321` in your browser to view the site.
