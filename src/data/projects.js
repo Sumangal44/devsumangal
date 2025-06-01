@@ -20,5 +20,12 @@ export const projects = [
     description: "🚀 Java Projects – A collection of beginner to advanced Java programs 🎯💻",
     image: "https://res.cloudinary.com/dmeroa8nx/image/upload/v1747564163/javaprojects-zeta.vercel.app_Laptop_2025-05-18_10.28.41_fufdrc.png",
     link: "https://javaprojects-zeta.vercel.app"
+  },
+  {
+    title:"Devsumangal",
+    description: "🚀👨‍💻❤️Devsumangal is a personal portfolio website showcasing my projects, skills, and experiences in web development. It features a clean design, responsive layout, and easy navigation to highlight my work effectively. 🚀",
+    image:"https://res.cloudinary.com/dmeroa8nx/image/upload/v1748770202/devsumangal.netlify.app_Laptop_2025-06-01_09.28.42_dpzbbf.png",
+    link: "https://devsumangal.netlify.app/"
+
   }
 ];
