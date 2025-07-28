@@ -7,11 +7,10 @@ import { projects } from "@/data/projects";
 import Services from "@/components/services.astro";
 import Contact from "@/components/contact.astro";
 // Image for the hero section
-const img =
-  "https://avatars.githubusercontent.com/u/123644743?s=400&u=d7278ff6097cba505b773db6a45f000faacba879&v=4";
+const img = "https://avatars.githubusercontent.com/u/200762829?v=4";
 ---
 
-<Layout title="DevSumangal - Home">
+<Layout title="DevSujata - Home">
   <div class="container px-4 md:px-6">
     <!-- Hero Section -->
     <section
@@ -45,9 +44,15 @@ const img =
             class="group relative inline-flex items-center justify-center rounded-lg border border-input bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-6 py-3 text-sm font-medium shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl hover:from-primary/90 hover:to-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-95 overflow-hidden"
           >
             <!-- Shimmer Effect -->
-            <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000"></div>
-            
-            <span id="downloadText" class="relative flex items-center gap-3 z-10 transition-all duration-300">
+            <div
+              class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000"
+            >
+            </div>
+
+            <span
+              id="downloadText"
+              class="relative flex items-center gap-3 z-10 transition-all duration-300"
+            >
               <!-- Download Icon -->
               <svg
                 id="downloadIcon"
@@ -63,7 +68,7 @@ const img =
                   d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 12v6m0 0l-3-3m3 3l3-3"
                 ></path>
               </svg>
-              
+
               <!-- Loading Spinner (hidden by default) -->
               <svg
                 id="loadingSpinner"
@@ -71,10 +76,20 @@ const img =
                 fill="none"
                 viewBox="0 0 24 24"
               >
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"></circle>
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
               </svg>
-              
+
               <!-- Success Checkmark (hidden by default) -->
               <svg
                 id="successIcon"
@@ -84,12 +99,15 @@ const img =
                 stroke-width="2.5"
                 viewBox="0 0 24 24"
               >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 13l4 4L19 7"></path>
               </svg>
-              
+
               <span id="buttonText" class="font-medium">Download Resume</span>
             </span>
-            
+
             <!-- Enhanced Progress Bar with Gradient -->
             <div
               id="progressContainer"
@@ -101,10 +119,13 @@ const img =
                 style="width: 0%;"
               >
                 <!-- Progress Glow Effect -->
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"
+                >
+                </div>
               </div>
             </div>
-            
+
             <!-- Percentage Display -->
             <div
               id="percentageDisplay"
@@ -112,7 +133,10 @@ const img =
             >
               <span id="percentageText">0%</span>
               <!-- Arrow pointing down -->
-              <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-2 border-r-2 border-t-2 border-transparent border-t-black/80"></div>
+              <div
+                class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-2 border-r-2 border-t-2 border-transparent border-t-black/80"
+              >
+              </div>
             </div>
           </button>
         </div>
@@ -187,21 +211,21 @@ const img =
       // Disable button and start loading state
       btn.disabled = true;
       btn.classList.add("opacity-80", "pointer-events-none", "scale-95");
-      
+
       // Show loading state
       downloadIcon.classList.add("hidden");
       loadingSpinner.classList.remove("hidden");
       buttonText.textContent = "Preparing Download...";
-      
+
       // Show percentage display with animation
       percentageDisplay.classList.add("opacity-100", "scale-100");
-      
+
       const url = "/sumangalkaran.pdf";
 
       try {
         // Add initial delay for better UX perception
-        await new Promise(resolve => setTimeout(resolve, 500));
-        
+        await new Promise((resolve) => setTimeout(resolve, 500));
+
         const response = await fetch(url);
         if (!response.ok) throw new Error("Download failed.");
 
@@ -218,32 +242,33 @@ const img =
         while (true) {
           const { done, value } = await reader.read();
           if (done) break;
-          
+
           chunks.push(value);
           loaded += value.length;
 
           if (total) {
             const percent = Math.round((loaded / total) * 100);
-            
+
             // Smooth progress animation
             requestAnimationFrame(() => {
               progressBar.style.width = `${percent}%`;
               percentageText.textContent = `${percent}%`;
-              
+
               // Add glow effect as progress increases
               if (percent > 50) {
                 progressBar.classList.add("shadow-lg", "shadow-cyan-500/50");
               }
-              
+
               // Pulse effect near completion
               if (percent > 90) {
                 progressBar.classList.add("animate-pulse");
               }
             });
-            
+
             // Conditional delay for smoother animation
-            if (total && total < 1_000_000) { // Apply delay for smaller files (< 1MB)
-              await new Promise(resolve => setTimeout(resolve, 20));
+            if (total && total < 1_000_000) {
+              // Apply delay for smaller files (< 1MB)
+              await new Promise((resolve) => setTimeout(resolve, 20));
             }
           } else {
             // Indeterminate progress
@@ -264,87 +289,101 @@ const img =
         // Success animation sequence
         progressBar.style.width = "100%";
         progressBar.classList.remove("animate-pulse");
-        progressBar.classList.add("bg-gradient-to-r", "from-green-400", "to-emerald-500"); // Ensure these classes are safelisted in tailwind.config.js
-        
+        progressBar.classList.add(
+          "bg-gradient-to-r",
+          "from-green-400",
+          "to-emerald-500"
+        ); // Ensure these classes are safelisted in tailwind.config.js
+
         // Hide loading, show success
         loadingSpinner.classList.add("hidden");
         successIcon.classList.remove("hidden");
         successIcon.classList.add("animate-bounce");
-        
+
         buttonText.textContent = "Downloaded Successfully!";
         percentageText.textContent = "Complete ✓";
-        
+
         // Success glow effect
         btn.classList.add("shadow-green-500/50", "shadow-lg");
-        
+
         // Celebrate with a subtle scale animation
         btn.classList.remove("scale-95");
         btn.classList.add("scale-100");
-        
+
         // Auto-reset after 3 seconds
         setTimeout(() => {
           resetButton();
         }, 3000);
-
       } catch (err) {
         console.error("Download error:", err);
-        
+
         // Error state animation
         progressBar.style.backgroundColor = "#ef4444";
         progressBar.classList.add("animate-pulse");
-        
+
         loadingSpinner.classList.add("hidden");
         downloadIcon.classList.remove("hidden");
         downloadIcon.classList.add("text-red-400");
-        
+
         buttonText.textContent = "Download Failed";
         percentageText.textContent = "Error!";
-        
+
         btn.classList.add("border-red-500", "bg-red-500/10");
-        
+
         // Show error toast
         showErrorToast(err.message || "Download failed. Please try again.");
-        
+
         // Reset after 3 seconds
         setTimeout(() => {
           resetButton();
         }, 3000);
       }
-      
+
       function resetButton() {
         // Reset all states with smooth transitions
         btn.disabled = false;
         btn.classList.remove(
-          "opacity-80", "pointer-events-none", "scale-95", "scale-100",
-          "shadow-green-500/50", "shadow-lg", "border-red-500", "bg-red-500/10"
+          "opacity-80",
+          "pointer-events-none",
+          "scale-95",
+          "scale-100",
+          "shadow-green-500/50",
+          "shadow-lg",
+          "border-red-500",
+          "bg-red-500/10"
         );
-        
+
         // Reset icons
         loadingSpinner.classList.add("hidden");
         successIcon.classList.add("hidden");
         successIcon.classList.remove("animate-bounce");
         downloadIcon.classList.remove("hidden", "text-red-400");
-        
+
         // Reset progress
         progressBar.style.width = "0%";
         progressBar.style.backgroundColor = "";
         progressBar.classList.remove(
-          "animate-pulse", "shadow-lg", "shadow-cyan-500/50",
-          "bg-gradient-to-r", "from-green-400", "to-emerald-500"
+          "animate-pulse",
+          "shadow-lg",
+          "shadow-cyan-500/50",
+          "bg-gradient-to-r",
+          "from-green-400",
+          "to-emerald-500"
         );
-        
+
         // Reset text
         buttonText.textContent = "Download Resume";
-        
+
         // Hide percentage display
         percentageDisplay.classList.remove("opacity-100", "scale-100");
         percentageText.textContent = "0%";
       }
-      
+
       function showErrorToast(message) {
         // Create a modern error toast
-        const toast = document.createElement('div');
-        toast.className = 'fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300';
+        const toast = document.createElement("div");
+        toast.className =
+          "fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300";
         toast.innerHTML = `
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -353,17 +392,17 @@ const img =
             <span>${message}</span>
           </div>
         `;
-        
+
         document.body.appendChild(toast);
-        
+
         // Animate in
         setTimeout(() => {
-          toast.classList.remove('translate-x-full');
+          toast.classList.remove("translate-x-full");
         }, 100);
-        
+
         // Auto remove after 4 seconds
         setTimeout(() => {
-          toast.classList.add('translate-x-full');
+          toast.classList.add("translate-x-full");
           setTimeout(() => {
             if (document.body.contains(toast)) {
               document.body.removeChild(toast);
