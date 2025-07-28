@@ -1,0 +1,74 @@
+---
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+---
+
+<section
+  aria-labelledby="contact-heading"
+  class="grid items-center gap-10 text-center md:text-center"
+>
+  <div class="max-w-2xl mx-auto">
+    <h1
+      id="contact-heading"
+      class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight"
+    >
+      Contact Me
+    </h1>
+    <p class="mt-2 text-muted-foreground text-base sm:text-lg">
+      Have a question or want to work together? Feel free to reach out!
+    </p>
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section class="mt-10 max-w-xl mx-auto w-full">
+  <form
+    action="https://formspree.io/f/xldbzkve"
+    method="POST"
+    aria-label="Contact Form"
+    class="space-y-6"
+  >
+    <div class="space-y-2">
+      <label for="name" class="block text-sm font-medium"> Name </label>
+      <Input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your Name"
+        required
+        aria-required="true"
+        className="w-full"
+      />
+    </div>
+
+    <div class="space-y-2">
+      <label for="email" class="block text-sm font-medium"> Email </label>
+      <Input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+        aria-required="true"
+        className="w-full"
+      />
+    </div>
+
+    <div class="space-y-2">
+      <label for="message" class="block text-sm font-medium"> Message </label>
+      <Textarea
+        id="message"
+        name="message"
+        placeholder="Your message here..."
+        required
+        aria-required="true"
+        className="w-full"
+      />
+    </div>
+
+    <Button type="submit" size="lg" variant="default" className="w-full">
+      Send Message
+    </Button>
+  </form>
+</section>
