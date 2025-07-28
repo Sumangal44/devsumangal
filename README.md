@@ -1,8 +1,8 @@
-# 💫 DevSumangal – Personal Portfolio Website
+# 💫 Devavhishikta – Personal Portfolio Website
 
-Welcome to **DevSumangal**, a beautifully crafted personal portfolio website built to showcase the projects, skills, and achievements of [Sumangal Karan](https://github.com/Sumangal44).([GitHub][1])
+Welcome to **Devavhishikta**, a beautifully crafted personal portfolio website built to showcase the projects, skills, and achievements of [Avhishikta maiti](https://github.com/Avhishikta).
 
-🌐 Live Site: [devsumangal.netlify.app](https://devsumangal.netlify.app/)([GitHub][1])
+🌐 Live Site: [devavhishikta.netlify.app](https://devavhishikta.netlify.app/)
 
 ---
 
@@ -31,8 +31,8 @@ To run this project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Sumangal44/devsumangal.git
-cd devsumangal
+git clone https://github.com/Avhishikta/devavhishikta.git
+cd devavhishikta
 
 # Install dependencies
 pnpm install
@@ -68,21 +68,18 @@ This project is licensed under the [MIT License](./LICENSE).
 
 ---
 ## 👥 Contributors
-Thanks to these amazing people for improving **devsumangal**! 🚀
+Thanks to these amazing people for improving **devavhishikta**! 🚀
 
-<a href="https://github.com/sumangal44/skelecli/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=sumangal44/devsumangal" />
+<a href="https://github.com/Avhishikta/devavhishikta/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Avhishkta/devavhishikta" />
 </a>
 
 
 ## 📬 Contact
 
-* **GitHub**: [@Sumangal44](https://github.com/Sumangal44)
-* **Portfolio**: [devsumangal.netlify.app](https://devsumangal.netlify.app/)
-* **LinkedIn**: [Sumangal Karan](https://www.linkedin.com/in/sumangal-karan)
-* **Twitter**: [@SumangalKaran](https://twitter.com/SumangalKaran)
-
+* **GitHub**: [@Avhishikta](https://github.com/Avhishikta)
+* **Portfolio**: [devavhishikta.netlify.app](https://devavhishikta.netlify.app/)
+* **LinkedIn**: [Avhishikta maiti](https://www.linkedin.com/in/)
 ---
 
 
-[1]: https://github.com/sumangal44?utm_source=chatgpt.com "Sumangal Karan Sumangal44 - GitHub"
