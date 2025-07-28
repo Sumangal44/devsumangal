@@ -24,7 +24,7 @@ import { Textarea } from "@/components/ui/textarea";
 <!-- Contact Form -->
 <section class="mt-10 max-w-xl mx-auto w-full">
   <form
-    action="https://formspree.io/f/xldbzkve"
+    action={import.meta.env.FORMSPREE_ENDPOINT || "https://formspree.io/f/defaultEndpoint"}
     method="POST"
     aria-label="Contact Form"
     class="space-y-6"
