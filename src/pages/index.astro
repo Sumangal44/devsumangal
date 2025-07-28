@@ -365,7 +365,9 @@ const img =
         setTimeout(() => {
           toast.classList.add('translate-x-full');
           setTimeout(() => {
-            document.body.removeChild(toast);
+            if (document.body.contains(toast)) {
+              document.body.removeChild(toast);
+            }
           }, 300);
         }, 4000);
       }
