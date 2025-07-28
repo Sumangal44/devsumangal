@@ -5,6 +5,9 @@ import ProjectCard from "@/components/ProjectCard";
 import SocialIcons from "@/components/SocialIcons";
 import { projects } from "@/data/projects";
 import Services from "@/components/services.astro";
+import contact from "@/components/contact.astro";
+import Contact from "@/components/contact.astro";
+// Image for the hero section
 const img =
   "https://avatars.githubusercontent.com/u/123644743?s=400&u=d7278ff6097cba505b773db6a45f000faacba879&v=4";
 ---
@@ -118,6 +121,11 @@ const img =
     </section>
     <!-- 👇 New Services Section -->
     <Services />
+
+    <!-- contact section -->
+    <div class="container px-4 py-12">
+      <Contact />
+    </div>
   </div>
   <script is:inline>
     async function downloadWithProgress() {
