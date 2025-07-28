@@ -266,7 +266,7 @@ const img =
         // Success animation sequence
         progressBar.style.width = "100%";
         progressBar.classList.remove("animate-pulse");
-        progressBar.classList.add("bg-gradient-to-r", "from-green-400", "to-emerald-500");
+        progressBar.classList.add("bg-gradient-to-r", "from-green-400", "to-emerald-500"); // Ensure these classes are safelisted in tailwind.config.js
         
         // Hide loading, show success
         loadingSpinner.classList.add("hidden");
