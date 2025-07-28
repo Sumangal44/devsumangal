@@ -3,6 +3,6 @@ export const skills = [
   { name: "CSS", icon: "https://cdn.simpleicons.org/css3/1572B6" },
         name: "Tailwind CSS",
     icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4"
-  },
+  }
   
 ];
