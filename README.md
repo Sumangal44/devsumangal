@@ -1,8 +1,8 @@
-# 💫 DevSumangal – Personal Portfolio Website
+# 💫 DevSujata – Personal Portfolio Website
 
-Welcome to **DevSumangal**, a beautifully crafted personal portfolio website built to showcase the projects, skills, and achievements of [Sumangal Karan](https://github.com/Sumangal44).([GitHub][1])
+Welcome to **DevSjata**, a beautifully crafted personal portfolio website built to showcase the projects, skills, and achievements of [sujata samanta](https://github.com/sujata109)
 
-🌐 Live Site: [devsumangal.netlify.app](https://devsumangal.netlify.app/)([GitHub][1])
+🌐 Live Site: [devsujata.netlify.app](https://devsujata.netlify.app/)
 
 ---
 
@@ -31,7 +31,7 @@ To run this project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Sumangal44/devsumangal.git
+git clone https://github.com/sujata109/devsujata.git
 cd devsumangal
 
 # Install dependencies
@@ -68,21 +68,20 @@ This project is licensed under the [MIT License](./LICENSE).
 
 ---
 ## 👥 Contributors
-Thanks to these amazing people for improving **devsumangal**! 🚀
+Thanks to these amazing people for improving **devsujata**! 🚀
 
-<a href="https://github.com/sumangal44/skelecli/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=sumangal44/devsumangal" />
+<a href="https://github.com/sujata109/devsujata/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sujata109/devsujata" />
 </a>
 
 
 ## 📬 Contact
 
-* **GitHub**: [@Sumangal44](https://github.com/Sumangal44)
-* **Portfolio**: [devsumangal.netlify.app](https://devsumangal.netlify.app/)
-* **LinkedIn**: [Sumangal Karan](https://www.linkedin.com/in/sumangal-karan)
-* **Twitter**: [@SumangalKaran](https://twitter.com/SumangalKaran)
+* **GitHub**: [@sujata109](https://github.com/sujata109)
+* **Portfolio**: [devsujata.netlify.app](https://devsujata.netlify.app/)
+* **LinkedIn**: [Sujata samanta](https://www.linkedin.com/in/)
+
 
 ---
 
 
-[1]: https://github.com/sumangal44?utm_source=chatgpt.com "Sumangal Karan Sumangal44 - GitHub"
