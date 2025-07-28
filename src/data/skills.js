@@ -1,6 +1,7 @@
 export const skills = [
   { name: "HTML", icon: "https://cdn.simpleicons.org/html5/E34F26" },
-  { name: "CSS", icon: "https://cdn.simpleicons.org/css3/1572B6" },
+    { name: "CSS", icon: "https://www.svgrepo.com/show/303481/css-3-logo.svg" },
+
   { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
   { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
   { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
