@@ -241,8 +241,10 @@ const img =
               }
             });
             
-            // Small delay for smoother animation
-            await new Promise(resolve => setTimeout(resolve, 20));
+            // Conditional delay for smoother animation
+            if (total && total < 1_000_000) { // Apply delay for smaller files (< 1MB)
+              await new Promise(resolve => setTimeout(resolve, 20));
+            }
           } else {
             // Indeterminate progress
             progressBar.style.width = "100%";
