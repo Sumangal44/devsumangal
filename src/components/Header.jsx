@@ -29,7 +29,7 @@ const Header = () => {
         {/* Logo */}
         <a href="/" className="flex items-center space-x-2">
           <span className="inline-block text-lg font-bold sm:text-xl">
-            Devsumangal
+            Devsujata
           </span>
         </a>
 
