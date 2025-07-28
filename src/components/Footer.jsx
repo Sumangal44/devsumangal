@@ -13,7 +13,7 @@ const Footer = () => {
               rel="noreferrer"
               className="font-medium underline underline-offset-4 transition-colors hover:text-foreground"
             >
-              sumangal karan
+              Avhishikta maiti
             </a>
             . Hosted on{" "}
             <a
@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
         <div className="flex gap-4">
           <a
-            href="https://github.com/sumangal44"
+            href="https://github.com/Avhishikta"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
@@ -38,7 +38,7 @@ const Footer = () => {
             <Github className="h-5 w-5" />
           </a>
           <a
-            href="https://x.com/SumangalKaran"
+            href="https://x.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
@@ -47,7 +47,7 @@ const Footer = () => {
             <Twitter className="h-5 w-5" />
           </a>
           <a
-            href="https://www.linkedin.com/in/sumangal-karan"
+            href="https://www.linkedin.com/in/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
