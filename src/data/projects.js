@@ -1,30 +1,11 @@
 
 export const projects = [
   {
-    title: "Charmmono-Theme",
+    title: "codeiq.ai",
     description:
-      "🚀👨‍🏭❤️Charmmono-Theme is a sleek VS Code theme inspired by monospace aesthetics and Charmed Icons, offering a minimal, elegant, and highly readable coding experience with dark & light modes. 🚀",
+      "A simple and responsive quiz web app built with HTML, CSS, and Vanilla JavaScript. 🚀",
     image:
-      "https://images.vscodethemes.com/sumangalkaran.charmmono-theme/charmmono-theme-dark-js-preview-BIg6.svg",
-    link: "https://marketplace.visualstudio.com/items?itemName=sumangalkaran.charmmono-theme"
-  },
-  {
-    title: "skelecli.dev",
-    description:
-      "🚀❤️✅A simple CLI to generate a blueprint for a new project✅👨‍🏭🚀",
-    image: "https://res.cloudinary.com/dmeroa8nx/image/upload/v1747563040/Screenshot_2025-05-18_153617_mv5fla.png",
-    link: "https://skelecli-dev.vercel.app/"
-  },
-  {
-    title: "javaprojects",
-    description: "🚀 Java Projects – A collection of beginner to advanced Java programs 🎯💻",
-    image: "https://res.cloudinary.com/dmeroa8nx/image/upload/v1747564163/javaprojects-zeta.vercel.app_Laptop_2025-05-18_10.28.41_fufdrc.png",
-    link: "https://javaprojects-zeta.vercel.app"
-  },
-  {
-    title:"Devsumangal",
-    description: "🚀👨‍💻❤️Devsumangal is a personal portfolio website showcasing my projects, skills, and experiences in web development. It features a clean design, responsive layout, and easy navigation to highlight my work effectively. 🚀",
-    image:"https://res.cloudinary.com/dmeroa8nx/image/upload/v1748770202/devsumangal.netlify.app_Laptop_2025-06-01_09.28.42_dpzbbf.png",
-    link: "https://devsumangal.netlify.app/",
+      "https://res.cloudinary.com/dobjvglxs/image/upload/v1753717861/127.0.0.1_5500_index.html_Laptop_2025-07-23_07.25.46_qzb6lc.png",
+    link: "https://codeiq-ai.vercel.app/"
   }
 ];
