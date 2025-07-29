@@ -1,8 +1,8 @@
 # 💫 DevSumangal – Personal Portfolio Website
 
-Welcome to **DevSumangal**, a beautifully crafted personal portfolio website built to showcase the projects, skills, and achievements of [Sumangal Karan](https://github.com/Sumangal44).([GitHub][1])
+Welcome to **DevSumangal**, a beautifully crafted personal portfolio website built to showcase the projects, skills, and achievements of [Sumangal Karan](https://github.com/Sumangal44)
 
-🌐 Live Site: [devsumangal.netlify.app](https://devsumangal.netlify.app/)([GitHub][1])
+🌐 Live Site: [devsumangal.netlify.app](https://devsumangal.netlify.app/)
 
 ---
 
@@ -85,4 +85,4 @@ Thanks to these amazing people for improving **devsumangal**! 🚀
 ---
 
 
-[1]: https://github.com/sumangal44?utm_source=chatgpt.com "Sumangal Karan Sumangal44 - GitHub"
+
