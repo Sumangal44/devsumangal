@@ -70,7 +70,7 @@ This project is licensed under the [MIT License](./LICENSE).
 ## 👥 Contributors
 Thanks to these amazing people for improving **devsumangal**! 🚀
 
-<a href="https://github.com/sumangal44/skelecli/graphs/contributors">
+<a href="https://github.com/sumangal44/devsumangal/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=sumangal44/devsumangal" />
 </a>
 
