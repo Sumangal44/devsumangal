@@ -176,6 +176,8 @@ const img =
     import { gsap } from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+    gsap.registerPlugin(ScrollTrigger);
+
     document.addEventListener("astro:page-load", () => {
       // We only want to run these animations if we are on the home page
       // Check if elements exist before animating
