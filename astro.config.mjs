@@ -9,7 +9,13 @@ import markdoc from '@astrojs/markdoc';
 
 import sitemap from '@astrojs/sitemap';
 
+import tailwindcss from '@tailwindcss/vite';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), partytown(), markdoc(), sitemap()]
+  integrations: [react(), partytown(), markdoc(), sitemap()],
+
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
