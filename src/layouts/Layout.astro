@@ -62,5 +62,21 @@ const { title } = Astro.props;
       </main>
       <Footer />
     </div>
+    <script>
+      import { gsap } from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+      
+      gsap.registerPlugin(ScrollTrigger);
+      
+      // Clear ScrollTriggers before page swap to prevent leaks with ViewTransitions
+      document.addEventListener('astro:before-swap', () => {
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      });
+      
+      // Refresh ScrollTrigger to recalculate dimensions on navigation
+      document.addEventListener('astro:page-load', () => {
+        ScrollTrigger.refresh();
+      });
+    </script>
   </body>
 </html>

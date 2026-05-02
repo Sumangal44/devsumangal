@@ -7,10 +7,10 @@ import { projects } from "@/data/projects";
 <Layout title="DevSumangal - Projects">
   <section class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
     <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl">
+      <h1 class="gsap-project-header text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl opacity-0 -translate-y-8">
         My Projects
       </h1>
-      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+      <p class="gsap-project-header mt-4 text-lg text-gray-600 dark:text-gray-300 opacity-0 -translate-y-8">
         Here's a collection of my recent work. Each project showcases different skills and technologies.
       </p>
     </div>
@@ -19,13 +19,42 @@ import { projects } from "@/data/projects";
   <section class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
     <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
-        <ProjectCard 
-          title={project.title}
-          description={project.description}
-          image={project.image}
-          link={project.link}
-        />
+        <div class="gsap-project-card opacity-0 translate-y-12">
+          <ProjectCard 
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            link={project.link}
+          />
+        </div>
       ))}
     </div>
   </section>
+
+  <script>
+    import { gsap } from "gsap";
+
+    document.addEventListener("astro:page-load", () => {
+      if (!document.querySelector(".gsap-project-header")) return;
+
+      // Header Animation
+      gsap.to(".gsap-project-header", {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+      });
+
+      // Stagger Cards
+      gsap.to(".gsap-project-card", {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "back.out(1.2)",
+        delay: 0.3,
+      });
+    });
+  </script>
 </Layout>

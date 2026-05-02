@@ -17,16 +17,16 @@ const img =
       <img
         src={img}
         alt="DevSumangal Avatar"
-        class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full shadow-lg border-4 border-primary dark:border-white"
+        class="gsap-about-img w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full shadow-lg border-4 border-primary dark:border-white opacity-0 scale-90"
         loading="lazy"
       />
       <div class="max-w-3xl text-center md:text-left">
         <h1
-          class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight"
+          class="gsap-about-text text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight opacity-0 translate-x-8"
         >
           About Me
         </h1>
-        <p class="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-400">
+        <p class="gsap-about-text mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-400 opacity-0 translate-x-8">
           I'm a passionate web developer with experience in modern web
           technologies. I love creating responsive and user-friendly web
           applications that solve real-world problems.
@@ -42,7 +42,7 @@ const img =
       >
         {
           skills.map((skill, index) => (
-            <li class="flex flex-col items-center gap-2 fade-up-skill">
+            <li class="gsap-about-skill flex flex-col items-center gap-2 opacity-0 translate-y-8">
               <img
                 src={skill.icon}
                 alt={`${skill.name} icon`}
@@ -56,7 +56,7 @@ const img =
     </section>
 
     <!-- Journey -->
-    <section class="py-10 md:py-16">
+    <section class="gsap-about-section py-10 md:py-16 opacity-0 translate-y-12">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div>
           <h2 class="text-2xl font-bold mb-4">My Journey</h2>
@@ -76,7 +76,7 @@ const img =
     </section>
 
     <!-- Connect -->
-    <section class="py-10 md:py-16">
+    <section class="gsap-about-section py-10 md:py-16 opacity-0 translate-y-12">
       <div class="max-w-2xl">
         <h2 class="text-2xl font-bold mb-4">Let's Connect</h2>
         <p class="mb-6 text-gray-600 dark:text-gray-400">
@@ -88,4 +88,58 @@ const img =
       </div>
     </section>
   </div>
+  
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    document.addEventListener("astro:page-load", () => {
+      if (!document.querySelector(".gsap-about-img")) return;
+
+      // Image animation
+      gsap.to(".gsap-about-img", {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        ease: "back.out(1.5)",
+      });
+
+      // Text animation
+      gsap.to(".gsap-about-text", {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+
+      // Skills stagger
+      gsap.to(".gsap-about-skill", {
+        scrollTrigger: {
+          trigger: ".gsap-about-skill",
+          start: "top 90%",
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "back.out(1.2)",
+      });
+
+      // Sections scroll animation
+      document.querySelectorAll(".gsap-about-section").forEach((section) => {
+        gsap.to(section, {
+          scrollTrigger: {
+            trigger: section,
+            start: "top 85%",
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+        });
+      });
+    });
+  </script>
 </Layout>

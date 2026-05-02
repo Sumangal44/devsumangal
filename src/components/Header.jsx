@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { gsap } from "gsap";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -15,6 +16,14 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    gsap.fromTo(
+      "header",
+      { y: -20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+    );
   }, []);
 
   const navLinks = ["Home", "Projects", "About", "services", "Contact"];
@@ -61,7 +70,7 @@ const Header = () => {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[240px] sm:w-[300px]">
+            <SheetContent side="right" className="w-[240px] sm:w-[300px]" aria-describedby={undefined}>
               <DialogTitle className="sr-only">
                 Mobile Navigation Menu
               </DialogTitle>

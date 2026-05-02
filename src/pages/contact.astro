@@ -15,18 +15,18 @@ import { Textarea } from "@/components/ui/textarea";
       <div class="max-w-2xl mx-auto">
         <h1
           id="contact-heading"
-          class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight"
+          class="gsap-contact-header text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight opacity-0 -translate-y-8"
         >
           Contact Me
         </h1>
-        <p class="mt-2 text-muted-foreground text-base sm:text-lg">
+        <p class="gsap-contact-header mt-2 text-muted-foreground text-base sm:text-lg opacity-0 -translate-y-8">
           Have a question or want to work together? Feel free to reach out!
         </p>
       </div>
     </section>
 
     <!-- Contact Form -->
-    <section class="mt-10 max-w-xl mx-auto w-full">
+    <section class="gsap-contact-form mt-10 max-w-xl mx-auto w-full opacity-0 translate-y-12">
       <form
         action="https://formspree.io/f/xldbzkve"
         method="POST"
@@ -79,4 +79,30 @@ import { Textarea } from "@/components/ui/textarea";
       </form>
     </section>
   </main>
+
+  <script>
+    import { gsap } from "gsap";
+
+    document.addEventListener("astro:page-load", () => {
+      if (!document.querySelector(".gsap-contact-header")) return;
+
+      // Header Animation
+      gsap.to(".gsap-contact-header", {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+      });
+
+      // Form Animation
+      gsap.to(".gsap-contact-form", {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power4.out",
+        delay: 0.4,
+      });
+    });
+  </script>
 </Layout>
