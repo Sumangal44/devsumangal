@@ -1,0 +1,76 @@
+---
+---
+
+<section class="gsap-section overflow-hidden w-full py-8 md:py-12 bg-primary/5 dark:bg-primary/5 border-y border-border opacity-0 translate-y-12 my-8 md:my-16">
+  <div class="marquee-container flex whitespace-nowrap overflow-hidden">
+    <div class="marquee-content inline-flex items-center">
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Available for work</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Web Development</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">UI/UX Design</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Creative Coding</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <!-- Repeated to ensure no gaps on ultrawide screens -->
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Available for work</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Web Development</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">UI/UX Design</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Creative Coding</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+    </div>
+    <!-- Duplicate for seamless looping -->
+    <div class="marquee-content inline-flex items-center" aria-hidden="true">
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Available for work</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Web Development</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">UI/UX Design</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Creative Coding</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <!-- Repeated to ensure no gaps on ultrawide screens -->
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Available for work</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Web Development</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">UI/UX Design</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-foreground/80 uppercase tracking-tighter">Creative Coding</span>
+      <span class="mx-4 sm:mx-6 text-3xl sm:text-4xl md:text-6xl font-black text-primary/40">•</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  
+  .marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 100%;
+    animation: marquee 25s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Optional: Pause animation on hover */
+  .marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+  }
+</style>

@@ -6,6 +6,7 @@ import SocialIcons from "@/components/SocialIcons";
 import { projects } from "@/data/projects";
 import Services from "@/components/services.astro";
 import Contact from "@/components/contact.astro";
+import ScrollingBanner from "@/components/ScrollingBanner.astro";
 // Image for the hero section
 const img =
   "https://avatars.githubusercontent.com/u/123644743?s=400&u=d7278ff6097cba505b773db6a45f000faacba879&v=4";
@@ -142,7 +143,12 @@ const img =
         </div>
       </div>
     </section>
+  </div>
 
+  <!-- Full Width Scrolling Banner -->
+  <ScrollingBanner />
+
+  <div class="container px-4 md:px-6">
     <!-- Projects Section -->
     <section class="gsap-section py-10 md:py-16 opacity-0 translate-y-12">
       <h2
