@@ -15,7 +15,7 @@
     "@astrojs/markdoc": "^1.0.5",
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/partytown": "^2.1.7",
-    "@astrojs/react": "^5.0.4",
+    "@astrojs/react": "^5.0.6",
     "@astrojs/sitemap": "^3.7.2",
     "@base-ui/react": "^1.4.1",
     "@fontsource-variable/geist": "^5.2.8",
